@@ -5,8 +5,6 @@
         <aside class="col-sm-4">
             {{-- ユーザ情報 --}}
             @include('users.card')
-            {{--お気に入り情報}}
-            @include('users.favoritesCard')
         </aside>
         <div class="col-sm-8">
             {{-- タブ --}}

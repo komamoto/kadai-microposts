@@ -129,10 +129,8 @@ class User extends Authenticatable
     {
         // すでにお気に入りしているかの確認
         $exist=$this->is_favorite($userId);
-        // 相手が自分自身かどうかの確認
-        $its_me=$this->id == $userId;
         
-        if($exist || $its_me)
+        if($exist)
         {
             // すでにお気に入り登録していればお気に入り登録を外す
             return false;
@@ -152,10 +150,8 @@ class User extends Authenticatable
     {
         // すでにフォローしているかの確認
         $exist=$this->is_favorite($userId);
-        // 相手が自分自身かどうかの確認
-        $its_me=$this->id == $userId;
         
-        if($exist && !$its_me)
+        if($exist)
         {
             // すでにフォローしていればフォローを外す
             $this->favorites()->detach($userId);
